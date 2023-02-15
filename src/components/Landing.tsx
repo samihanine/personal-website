@@ -31,7 +31,6 @@ export const Landing = () => {
             src={face}
             height={700}
             width={500}
-            placeholder="blur"
             className="h-full w-auto hidden lg:block"
           />
         </div>

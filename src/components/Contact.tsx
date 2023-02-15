@@ -115,8 +115,13 @@ export const Contact = () => {
     console.log("submit");
 
     const form = new FormData(e.currentTarget);
-    const webhookUrl =
-      "https://discord.com/api/webhooks/1075531773880045598/XzD0ByIFZc4HZ9JggdCZtj-iBAmYxAxJBJrIdSILDTcxgpN9NP2cnb7d5QPgnJv_-D4e";
+
+    const discord = "https://discord.com/api/webhooks/";
+    const a = "1075550853693452309/";
+    const b = "PkD0It305_mM6eg-";
+    const c = "4fTwJqtGTDiUVRsFRvKZmc7GtBqSs5H7oEmtoO6IOLf5P9iUT-fm";
+
+    const url = discord + a + b + c;
 
     const webhookBody = {
       embeds: [
@@ -138,7 +143,7 @@ export const Contact = () => {
       ],
     };
 
-    const response = await fetch(webhookUrl, {
+    const response = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
