@@ -6,7 +6,7 @@ export const Landing = () => {
   return (
     <Section color="black" id="landing" className="!py-0 h-[600px]">
       <div className="flex items-center h-full aspect-square justify-between">
-        <div className="absolute flex flex-col gap-10">
+        <div className="absolute flex flex-col gap-10" data-aos="fade-right">
           <h1 className="text-[80px] leading-[90px] lg:text-[120px] lg:leading-[140px] text-white">
             Sami <br></br> Hanine
           </h1>

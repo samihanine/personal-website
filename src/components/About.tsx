@@ -14,9 +14,12 @@ export const AboutSkill = ({ skill }: { skill: Skill }) => {
 
 export const About = () => {
   return (
-    <Section id="about" color="white">
+    <Section id="about" color="white" className="py-16">
       <div className="flex gap-6 flex-col lg:flex-row items-center justify-between">
-        <div className="lg:w-[50%] w-full flex flex-col gap-12">
+        <div
+          data-aos="fade-right"
+          className="lg:w-[50%] w-full flex flex-col gap-12"
+        >
           <h2 className="text-5xl font-bold">My Career So Far</h2>
           <p className="text-grey">
             For two years, I worked as a freelance developer and collaborated
@@ -49,7 +52,10 @@ export const About = () => {
           </p>
         </div>
 
-        <div className="lg:w-[40%] w-full flex flex-wrap gap-3 content-start pt-12 lg:pt-0">
+        <div
+          data-aos="fade-left"
+          className="lg:w-[40%] w-full flex flex-wrap gap-3 content-start pt-12 lg:pt-0"
+        >
           {skills.map((skill) => (
             <AboutSkill key={skill.name} skill={skill} />
           ))}

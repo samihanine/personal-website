@@ -1,4 +1,5 @@
 import { Section } from "./Section";
+import React from "react";
 
 const Label = ({ label, id }: { label: string; id: string }) => {
   return (
@@ -8,15 +9,13 @@ const Label = ({ label, id }: { label: string; id: string }) => {
   );
 };
 
-const InputText = ({
-  label,
-  id,
-  ...props
-}: {
+type InputTextProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label: string;
   id: string;
   [key: string]: any;
-}) => {
+};
+
+const InputText = ({ label, id, ...props }: InputTextProps) => {
   return (
     <div className="flex flex-col gap-2 flex-1">
       <Label id={id} label={label} />
@@ -30,12 +29,10 @@ const InputText = ({
   );
 };
 
-const InputSelect = ({
-  label,
-  id,
-  options,
-  ...props
-}: {
+type InputSelectProps = React.DetailedHTMLProps<
+  React.SelectHTMLAttributes<HTMLSelectElement>,
+  HTMLSelectElement
+> & {
   label: string;
   id: string;
   [key: string]: any;
@@ -43,7 +40,9 @@ const InputSelect = ({
     value: string;
     label: string;
   }[];
-}) => {
+};
+
+const InputSelect = ({ label, id, options, ...props }: InputSelectProps) => {
   return (
     <div className="flex flex-col gap-2 flex-1">
       <Label id={id} label={label} />
@@ -62,15 +61,16 @@ const InputSelect = ({
   );
 };
 
-const InputTextArea = ({
-  label,
-  id,
-  ...props
-}: {
+type InputTextAreaProps = React.DetailedHTMLProps<
+  React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+  HTMLTextAreaElement
+> & {
   label: string;
   id: string;
   [key: string]: any;
-}) => {
+};
+
+const InputTextArea = ({ label, id, ...props }: InputTextAreaProps) => {
   return (
     <div className="flex flex-col gap-2 flex-1">
       <Label id={id} label={label} />
@@ -95,6 +95,11 @@ const Button = ({ label, ...props }: { label: string; [key: string]: any }) => {
 };
 
 export const Contact = () => {
+  const [mail, setMail] = React.useState("");
+  const [name, setName] = React.useState("");
+  const [message, setMessage] = React.useState("");
+  const [type, setType] = React.useState("job");
+
   const options = [
     {
       value: "job",
@@ -112,53 +117,35 @@ export const Contact = () => {
 
   const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("submit");
 
-    const form = new FormData(e.currentTarget);
-
-    const discord = "https://discord.com/api/webhooks/";
-    const a = "1075550853693452309/";
-    const b = "PkD0It305_mM6eg-";
-    const c = "4fTwJqtGTDiUVRsFRvKZmc7GtBqSs5H7oEmtoO6IOLf5P9iUT-fm";
-
-    const url = discord + a + b + c;
-
-    const webhookBody = {
-      embeds: [
-        {
-          title: "Contact Form Submitted",
-          fields: [
-            {
-              name: "Sender",
-              value: form.get("first-name"),
-            },
-            {
-              name: "Message",
-              value: `Email: ${form.get("mail")} \n Message : ${form.get(
-                "message"
-              )} \n Interest : ${form.get("interest")}`,
-            },
-          ],
+    try {
+      const response = await fetch("https://submit-form.com/UbSTw7AA", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
-      ],
-    };
+        body: JSON.stringify({
+          message: type + "\n" + message,
+          name: name,
+          email: mail,
+        }),
+      });
 
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(webhookBody),
-    });
-
-    if (!response.ok) {
+      setMail("");
+      setName("");
+      setMessage("");
+      setType("job");
+    } catch (e) {
       alert("There was an error! Try again later!");
     }
   };
-
   return (
     <Section color="white" className="gap-10">
-      <h2 className="font-bold text-4xl lg:text-[55px] lg:leading-[68px]">
+      <h2
+        data-aos="fade-right"
+        className="font-bold text-4xl lg:text-[55px] lg:leading-[68px]"
+      >
         Love to hear from you, <br></br>Get in touch 👋
       </h2>
 
@@ -166,9 +153,11 @@ export const Contact = () => {
         <div className="flex gap-4 flex-col lg:flex-row">
           <InputText
             label="Your name"
-            id="first-name"
-            name="first-name"
+            id="name"
+            name="name"
             required
+            value={name}
+            onChange={(e: any) => setName(e.target.value)}
           />
           <InputText
             required
@@ -176,6 +165,8 @@ export const Contact = () => {
             label="Your email"
             id="mail"
             name="mail"
+            value={mail}
+            onChange={(e: any) => setMail(e.target.value)}
           />
         </div>
         <InputSelect
@@ -183,12 +174,16 @@ export const Contact = () => {
           id="interest"
           options={options}
           name="interest"
+          value={type}
+          onChange={(e: any) => setType(e.target.value)}
         />
         <InputTextArea
           label="Your message"
           id="message"
           name="message"
           required
+          value={message}
+          onChange={(e: any) => setMessage(e.target.value)}
         />
 
         <div className="flex gap-4">

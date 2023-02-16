@@ -23,7 +23,7 @@ export const Quote = () => {
   return (
     <Section id="quote" color="white" className="gap-12">
       <QuoteSvg className="w-10 h-10 text-inherit" />
-      <p className="text-center text-2xl lg:text-3xl">
+      <p data-aos="zoom-in" className="text-center text-2xl lg:text-3xl">
         There are more possible games of chess than there are atoms in the
         universe.
         <br></br>

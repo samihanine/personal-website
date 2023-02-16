@@ -8,7 +8,6 @@ import {
   Quote,
   Networks,
 } from "@/components";
-
 import Head from "next/head";
 
 export default function Home() {

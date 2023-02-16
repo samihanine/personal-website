@@ -25,7 +25,7 @@ export const Projects = () => {
 
   return (
     <Section id="projects" color="black" className="py-[60px]">
-      <h2 className="text-5xl font-bold mb-6 lg:mb-12">
+      <h2 data-aos="fade-right" className="text-5xl font-bold mb-6 lg:mb-12">
         Some of my best work 💼
       </h2>
       <div className="flex items-center justify-between gap-4 lg:gap-8 lg:flex-row flex-col-reverse">
@@ -34,6 +34,7 @@ export const Projects = () => {
           href={project.link}
           target="_blank"
           rel="noreferrer"
+          data-aos="fade-right"
         >
           <Image
             src={project.image}
@@ -45,7 +46,10 @@ export const Projects = () => {
           />
         </a>
 
-        <div className="flex flex-col justify-between gap-12 items-end lg:w-[400px] lg:h-[500px]">
+        <div
+          data-aos="fade-left"
+          className="flex flex-col justify-between gap-12 items-end lg:w-[400px] lg:h-[500px]"
+        >
           <div className="flex justify-end mt-12 lg:mt-0">
             <h3 className="absolute z-[0] mt-[-120px] ml-[-160px] text-[250px] text-secondary font-bold drop-shadow-[0_0px_1.5px_rgba(255,255,255,1)]">
               0{projectId + 1}

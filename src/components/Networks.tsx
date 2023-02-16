@@ -55,40 +55,44 @@ export const MailIcon = ({ ...props }: { [key: string]: any }) => {
 };
 
 export const Networks = () => {
+  const networks = [
+    {
+      name: "Github",
+      icon: GithubIcon,
+      link: "https://github.com/samitraille0",
+    },
+    {
+      name: "Instagram",
+      icon: InstagramIcon,
+      link: "https://www.instagram.com/samihanine/",
+    },
+    {
+      name: "Linkedin",
+      icon: LinkedinIcon,
+      link: "https://www.linkedin.com/in/sami-hanine-a685201b9/",
+    },
+    {
+      name: "Mail",
+      icon: MailIcon,
+      link: "mailto:samihanine22@gmail.com",
+    },
+  ];
+
   return (
     <Section id="contact" color="black">
       <div className="flex gap-10 justify-evenly">
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href={"https://github.com/samitraille0"}
-        >
-          <GithubIcon className="lg:w-20 lg:h-20 w-10 h-10 text-inherit" />
-        </a>
-
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href={"https://www.instagram.com/samihanine/"}
-        >
-          <InstagramIcon className="lg:w-20 lg:h-20 w-10 h-10 text-inherit" />
-        </a>
-
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href={"https://www.linkedin.com/in/sami-hanine-a685201b9/"}
-        >
-          <LinkedinIcon className="lg:w-20 lg:h-20 w-10 h-10 text-inherit" />
-        </a>
-
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href={"mailto:sami.hanine22@gmail.com"}
-        >
-          <MailIcon className="lg:w-20 lg:h-20 w-10 h-10 text-inherit" />
-        </a>
+        {networks.map((network, index) => (
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href={network.link}
+            key={network.name}
+            aos-delay={index * 300}
+            data-aos="fade-right"
+          >
+            <network.icon className="lg:w-20 lg:h-20 w-10 h-10 text-inherit" />
+          </a>
+        ))}
       </div>
     </Section>
   );
