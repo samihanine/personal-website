@@ -7,8 +7,8 @@ export const Landing = () => {
     <Section color="black" id="landing" className="!py-0 h-[600px]">
       <div className="flex items-center h-full aspect-square justify-between">
         <div className="absolute flex flex-col gap-10" data-aos="fade-right">
-          <h1 className="text-[80px] leading-[90px] lg:text-[120px] lg:leading-[140px] text-white">
-            Sami <br></br> Hanine
+          <h1 className="text-[80px] leading-[90px] lg:text-[125px] font-extralight lg:leading-[140px] text-white">
+            Sami <br /> Hanine
           </h1>
 
           <p className="text text-grey">
@@ -21,7 +21,7 @@ export const Landing = () => {
             className="text-2xl bold underline-offset-8 underline"
             href="#contact"
           >
-            Send me a message 👋
+            Send me a message !
           </a>
         </div>
         <div></div>

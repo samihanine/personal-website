@@ -5,6 +5,7 @@ import practice from "../../public/images/practice.png";
 import docshare from "../../public/images/docshare.png";
 import printer from "../../public/images/printer.png";
 import reddimension from "../../public/images/reddimension.png";
+import milo from "../../public/images/milo.png";
 import { StaticImageData } from "next/image";
 
 export type Project = {
@@ -47,6 +48,14 @@ export const projects: Project[] = [
     image: practice,
     date: "2021-03-01",
     link: "https://samihanine.github.io/practices/",
+  },
+  {
+    title: "Miloguide",
+    description:
+      "I was a proud contributor to the Miloguide platform, where I integrated multiple pages from Figma designs. I worked extensively within a complex ecosystem of a multi-platform application.",
+    image: milo,
+    date: "2021-03-01",
+    link: "https://miloguide.com/",
   },
   {
     title: "Doc Share",

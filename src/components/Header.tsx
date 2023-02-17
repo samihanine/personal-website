@@ -9,7 +9,7 @@ type LinkData = {
 const NavLink = ({ link }: { link: LinkData }) => {
   const { name, id } = link;
   return (
-    <li className="text-grey hover:text-inherit hover:underline lg:text-xl underline-offset-8 cursor-pointer">
+    <li className="text-grey hover:text-inherit hover:underline lg:text-base font-semibold underline-offset-8 cursor-pointer">
       <Link
         className="active:text-primary active:underline"
         activeClass="active"

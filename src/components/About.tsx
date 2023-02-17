@@ -1,9 +1,6 @@
 import { Skill, skills } from "@/data";
 import { Section } from "./Section";
 
-// write a text in English that explains my background:
-// - I started programming by making video games on the web. After that I got interested in creating websites and web applications. I have two years of experience as a freelance web designer. I worked 6 months at senzu, a startup that creates connected objects. I'm currently working for Milo, a tourism company in Quebec.
-
 export const AboutSkill = ({ skill }: { skill: Skill }) => {
   return (
     <p className="font-bold text-base text-secondary p-1 border border-[#c1c3d2] rounded-lg w-fit h-fit">
@@ -14,13 +11,13 @@ export const AboutSkill = ({ skill }: { skill: Skill }) => {
 
 export const About = () => {
   return (
-    <Section id="about" color="white" className="py-16">
+    <Section id="about" color="white">
       <div className="flex gap-6 flex-col lg:flex-row items-center justify-between">
         <div
           data-aos="fade-right"
           className="lg:w-[50%] w-full flex flex-col gap-12"
         >
-          <h2 className="text-5xl font-bold">My Career So Far</h2>
+          <h2 className="text-5xl font-bold">🧑‍💻 My Career So Far</h2>
           <p className="text-grey">
             For two years, I worked as a freelance developer and collaborated
             with several startups, including{" "}

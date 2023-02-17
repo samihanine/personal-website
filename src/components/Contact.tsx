@@ -1,98 +1,6 @@
 import { Section } from "./Section";
 import React from "react";
-
-const Label = ({ label, id }: { label: string; id: string }) => {
-  return (
-    <label className="text-lg" htmlFor={id}>
-      {label}
-    </label>
-  );
-};
-
-type InputTextProps = React.InputHTMLAttributes<HTMLInputElement> & {
-  label: string;
-  id: string;
-  [key: string]: any;
-};
-
-const InputText = ({ label, id, ...props }: InputTextProps) => {
-  return (
-    <div className="flex flex-col gap-2 flex-1">
-      <Label id={id} label={label} />
-      <input
-        type="text"
-        id={id}
-        className="border border-secondary bg-white p-2"
-        {...props}
-      />
-    </div>
-  );
-};
-
-type InputSelectProps = React.DetailedHTMLProps<
-  React.SelectHTMLAttributes<HTMLSelectElement>,
-  HTMLSelectElement
-> & {
-  label: string;
-  id: string;
-  [key: string]: any;
-  options: {
-    value: string;
-    label: string;
-  }[];
-};
-
-const InputSelect = ({ label, id, options, ...props }: InputSelectProps) => {
-  return (
-    <div className="flex flex-col gap-2 flex-1">
-      <Label id={id} label={label} />
-      <select
-        id={id}
-        className="border border-secondary bg-white p-2"
-        {...props}
-      >
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
-};
-
-type InputTextAreaProps = React.DetailedHTMLProps<
-  React.TextareaHTMLAttributes<HTMLTextAreaElement>,
-  HTMLTextAreaElement
-> & {
-  label: string;
-  id: string;
-  [key: string]: any;
-};
-
-const InputTextArea = ({ label, id, ...props }: InputTextAreaProps) => {
-  return (
-    <div className="flex flex-col gap-2 flex-1">
-      <Label id={id} label={label} />
-      <textarea
-        id={id}
-        className="border border-secondary bg-white p-2"
-        {...props}
-      />
-    </div>
-  );
-};
-
-const Button = ({ label, ...props }: { label: string; [key: string]: any }) => {
-  return (
-    <button
-      {...props}
-      className={"bg-secondary text-primary p-2 font-bold " + props.className}
-    >
-      {label}
-    </button>
-  );
-};
+import { InputText, InputSelect, InputArea, Button } from "../ui";
 
 export const Contact = () => {
   const [mail, setMail] = React.useState("");
@@ -177,7 +85,7 @@ export const Contact = () => {
           value={type}
           onChange={(e: any) => setType(e.target.value)}
         />
-        <InputTextArea
+        <InputArea
           label="Your message"
           id="message"
           name="message"
