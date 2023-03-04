@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import { useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -12,5 +13,10 @@ export default function App({ Component, pageProps }: AppProps) {
     });
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Component {...pageProps} />
+      <Analytics />
+    </>
+  );
 }
