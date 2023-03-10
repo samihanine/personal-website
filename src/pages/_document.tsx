@@ -1,8 +1,14 @@
-import { Html, Head, Main, NextScript } from "next/document";
+import {
+  Html,
+  Head,
+  Main,
+  NextScript,
+  type DocumentProps,
+} from "next/document";
 
-export default function Document() {
+export default function Document(props: DocumentProps) {
   return (
-    <Html lang="en">
+    <Html lang={props.__NEXT_DATA__.props.initialLanguage}>
       <Head />
       <body>
         <Main />

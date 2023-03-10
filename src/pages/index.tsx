@@ -7,10 +7,15 @@ import {
   Footer,
   Quote,
   Networks,
+  Section,
 } from "@/components";
 import Head from "next/head";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Home() {
+  const { t } = useTranslation();
+
   return (
     <>
       <Head>
@@ -30,7 +35,16 @@ export default function Home() {
         <Networks />
         <Contact />
         <Footer />
+        <Section>
+          <p> {t`header.description`}</p>
+        </Section>
       </div>
     </>
   );
 }
+
+export const getStaticProps = async ({ locale }: any) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common"])),
+  },
+});
