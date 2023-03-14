@@ -52,8 +52,8 @@ export const Header = () => {
 
   return (
     <>
-      <div id="home" className="h-[92px]"></div>
-      <div className="fixed w-full z-50">
+      <div id="home" className="h-[92px] hidden lg:flex"></div>
+      <div className="fixed w-full z-50 hidden lg:flex">
         <Section id="header" color="black" className="py-4">
           <div className="flex w-full justify-between">
             <nav className="w-full">

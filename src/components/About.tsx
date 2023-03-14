@@ -20,7 +20,7 @@ export const About = () => {
           data-aos="fade-right"
           className="lg:w-[50%] w-full flex flex-col gap-12"
         >
-          <h2 className="text-5xl font-bold">{t`about.title`}</h2>
+          <h2 className="text-2xl lg:text-5xl font-bold">{t`about.title`}</h2>
           <p className="text-grey">
             {t`about.description`}
             <br></br>

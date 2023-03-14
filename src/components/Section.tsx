@@ -16,7 +16,7 @@ export const Section = ({
     >
       <div
         {...props}
-        className={`max-w-[1200px] flex flex-col w-full px-8 py-20 ${
+        className={`max-w-[1200px] flex flex-col w-full px-4 lg:px-8 py-20 ${
           color !== "white" ? "text-primary" : "text-secondary"
         } ${props.className || ""}`}
       >

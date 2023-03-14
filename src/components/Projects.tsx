@@ -58,10 +58,13 @@ export const Projects = () => {
 
   return (
     <Section id="projects" color="black" className="py-[80px]">
-      <h2 data-aos="fade-right" className="text-5xl font-bold mb-6 lg:mb-12">
+      <h2
+        data-aos="fade-right"
+        className="text-2xl lg:text-5xl font-bold mb-6 lg:mb-12"
+      >
         {t`projects.title`}
       </h2>
-      <div className="flex items-center justify-between gap-4 lg:gap-8 lg:flex-row flex-col-reverse">
+      <div className="flex items-center justify-between gap-4 lg:gap-8 lg:flex-row flex-col-reverse w-full">
         <a
           className="flex-1 carousel"
           href={project.link}

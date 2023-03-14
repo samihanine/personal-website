@@ -7,7 +7,7 @@ export const Footer = () => {
 
   return (
     <Section id="footer" color="black">
-      <footer className="flex justify-between">
+      <footer className="flex justify-between flex-col lg:flex-row items-center gap-5">
         <p>{t`footer.right`}</p>
         <div className="flex lg:hidden">
           <Languages />

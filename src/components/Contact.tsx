@@ -54,10 +54,7 @@ export const Contact = () => {
   };
   return (
     <Section color="white" className="gap-10">
-      <h2
-        data-aos="fade-right"
-        className="font-bold text-4xl lg:text-[55px] lg:leading-[68px]"
-      >
+      <h2 data-aos="fade-right" className="font-bold text-2xl lg:text-5xl">
         {t`contact.title`} <br></br>
         {t`contact.subtitle`}
       </h2>
