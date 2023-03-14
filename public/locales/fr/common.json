@@ -1,5 +1,56 @@
 {
+    "meta": {
+        "description": "Le portfolio de Sami Hanine, développeur full-stack, présente son expertise en développement web, notamment en design, en développement backend et en gestion de bases de données."
+    },
+    "about": {
+        "title": "🧑‍💻 Ma carrière jusqu’à présent",
+        "description": "Pendant deux ans, j’ai travaillé en tant que développeur freelance et collaboré avec plusieurs startups, dont Senzu, où j’ai travaillé pendant cinq mois. Actuellement, je travaille chez l'entreprise Miloguide rism à Montréal, et je suis ravi de faire partie d'une équipe dynamique et évolutive. Si vous êtes à la recherche d'un développeur web compétent et créatif, n'hésitez pas à me contacter. Je suis convaincu que je peux vous aider à atteindre vos objectifs et à donner vie à votre vision.",
+        "thanks": "Merci d’avoir pris le temps de lire un peu sur moi!"
+    },
+    "contact": {
+        "title": "Travaillons ensemble,",
+        "subtitle": "👋 Contactez-nous",
+        "name": "Votre nom",
+        "email": "Votre adresse e-mail",
+        "message": "Votre message",
+        "interest": "Qu’est-ce qui vous intéresse?",
+        "submit": "Envoyer un message",
+        "success": "Votre message a été envoyé avec succès !",
+        "error": "Une erreur s’est produite lors de l’envoi de votre message. Veuillez réessayer plus tard."
+    },
+    "header": {
+        "landing": "À propos",
+        "about": "À propos",
+        "projects": "Projets",
+        "quote": "Citation",
+        "contact": "Contact",
+        "home": "Acceuil"
+    },
+    "projects": {
+        "title": "💼 Certains de mes derniers projets",
+        "see": "Aller au projet",
+        "next": "Suivant",
+        "previous": "Précédent",
+        "obeo": "Obeo Biogas est un projet que j'ai réalisé en tant que freelance au Canada. Il s'agit du site web d'une startup affiliée au Centech (un accélérateur de startups à Montréal). La startup vise à réduire l'impact écologique des exploitations agricoles tout en augmentant leurs revenus.",
+        "aled": "ALED est une plateforme pour les étudiants. Elle permet aux utilisateurs d'échanger des documents et de poser des questions dans un forum. Elle donne également la possibilité de consulter son emploi du temps, ses notes et de discuter avec d'autres étudiants",
+        "cabinetlatif": "Il s'agit d'un site vitrine que j'ai réalisé pour un cabinet d'expertise comptable basé à Nantes, le Cabinet Latif. J'ai créé les visuels et le code en me basant sur les retours du client.",
+        "tutoriels": "J'ai créé ces tutoriels dans le but d'aider les étudiants à apprendre le Javascript. Récemment, j'ai également écrit un tutoriel sur React.js. À l'avenir, je prévois de couvrir le PHP et le SQL.",
+        "pratique": "J'ai conçu ce site dans le cadre d'un appel d'offres pour une entreprise de ressources humaines : Practice. L'enjeu était de répondre au cahier des charges en termes de visuels. ",
+        "miloguide": "J'ai été un fier contributeur de la plateforme Miloguide, où j'ai intégré de multiples pages issues de conceptions Figma. J'ai beaucoup travaillé au sein d'un écosystème complexe d'une application multiplateforme.",
+        "docshare": "J'ai développé une application de partage de documents pour la société de conseil Emergence Entreprise. Elle permet aux clients de consulter, télécharger et envoyer des documents. Le défi de cette application était lié à la sécurité des données",
+        "senzu": "Senzu Printer est une application web qui permet d'imprimer des étiquettes d'expédition pour des produits connectés. Elle est créée à l'aide d'Electron et de React, et est conçue pour être utilisée par les partenaires imprimeurs de l'entreprise.",
+        "jeu": "J'ai réalisé plus d'une dizaine de jeux vidéo directement intégrés dans le navigateur. Red Dimension est mon plus gros projet de jeu en javascript à ce jour. J'ai adoré le processus créatif qui est ressorti de ce travail."
+    },
+    "quote": {
+        "text-1": "Il y a plus de parties d'échecs possibles qu'il n'y a d'atomes dans l'univers.",
+        "text-2": "Cela signifie que si vous faites une erreur, il existe une quantité presque infinie de façons de la réparer."
+    },
     "footer": {
-        "right": "Copyright © 2023 Sami Hanine. All rights reserved."
+        "right": "Copyright © 2023 - Tout droits réservés à Sami Hanine. "
+    },
+    "landing": {
+        "description1": "J'ai appris à coder à travers des projets depuis que",
+        "description2": "j'ai 12 ans et je n'ai jamais arrêté.",
+        "send": "Envoyez-moi un message !"
     }
 }

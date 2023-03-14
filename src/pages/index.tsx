@@ -20,10 +20,7 @@ export default function Home() {
     <>
       <Head>
         <title>Sami Hanine</title>
-        <meta
-          name="description"
-          content="Sami Hanine's full-stack developer portfolio showcases his expertise in web development, including responsive design, backend development, and database management."
-        />
+        <meta name="description" content={t`meta.description`} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex flex-col bg-secondary">
@@ -35,9 +32,6 @@ export default function Home() {
         <Networks />
         <Contact />
         <Footer />
-        <Section>
-          <p> {t`header.description`}</p>
-        </Section>
       </div>
     </>
   );

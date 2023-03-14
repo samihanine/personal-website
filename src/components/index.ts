@@ -7,3 +7,4 @@ export * from "./Landing";
 export * from "./Section";
 export * from "./Quote";
 export * from "./Networks";
+export * from "./Languages";

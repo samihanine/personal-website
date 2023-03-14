@@ -1,8 +1,11 @@
 import { Section } from "./Section";
 import Image from "next/image";
 import face from "../../public/images/face.png";
+import { useTranslation } from "next-i18next";
 
 export const Landing = () => {
+  const { t } = useTranslation();
+
   return (
     <Section color="black" id="landing" className="!py-0 h-[600px]">
       <div className="flex items-center h-full aspect-square justify-between">
@@ -12,16 +15,16 @@ export const Landing = () => {
           </h1>
 
           <p className="text text-grey">
-            {`I've been learning to code through projects since I was 12`}
+            {t`landing.description1`}
             <br></br>
-            {` and I've never stopped.`}
+            {t`landing.description2`}
           </p>
 
           <a
             className="text-2xl bold underline-offset-8 underline"
             href="#contact"
           >
-            Send me a message !
+            {t`landing.send`}
           </a>
         </div>
         <div></div>

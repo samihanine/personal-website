@@ -1,5 +1,7 @@
+import { useTranslation } from "next-i18next";
 import { Section } from "./Section";
 import { Link } from "react-scroll";
+import { Languages } from "./Languages";
 
 type LinkData = {
   name: string;
@@ -23,25 +25,27 @@ const NavLink = ({ link }: { link: LinkData }) => {
 };
 
 export const Header = () => {
+  const { t } = useTranslation("");
+
   const links: LinkData[] = [
     {
-      name: "Home",
+      name: t`header.home`,
       id: "landing",
     },
     {
-      name: "About",
+      name: t`header.about`,
       id: "about",
     },
     {
-      name: "Projects",
+      name: t`header.projects`,
       id: "projects",
     },
     {
-      name: "Quote",
+      name: t`header.quote`,
       id: "quote",
     },
     {
-      name: "Contact",
+      name: t`header.contact`,
       id: "contact",
     },
   ];
@@ -51,13 +55,19 @@ export const Header = () => {
       <div id="home" className="h-[92px]"></div>
       <div className="fixed w-full z-50">
         <Section id="header" color="black" className="py-4">
-          <nav>
-            <ul className="flex justify-between lg:justify-start gap-2 flex-row lg:gap-10 px-0 p-4">
-              {links.map((link) => (
-                <NavLink key={link.id} link={link} />
-              ))}
-            </ul>
-          </nav>
+          <div className="flex w-full justify-between">
+            <nav className="w-full">
+              <ul className="flex justify-between lg:justify-start gap-2 flex-row lg:gap-10 px-0 p-4">
+                {links.map((link) => (
+                  <NavLink key={link.id} link={link} />
+                ))}
+              </ul>
+            </nav>
+
+            <div className="hidden lg:flex">
+              <Languages />
+            </div>
+          </div>
         </Section>
       </div>
     </>

@@ -1,5 +1,6 @@
 import { Skill, skills } from "@/data";
 import { Section } from "./Section";
+import { useTranslation } from "next-i18next";
 
 export const AboutSkill = ({ skill }: { skill: Skill }) => {
   return (
@@ -10,6 +11,8 @@ export const AboutSkill = ({ skill }: { skill: Skill }) => {
 };
 
 export const About = () => {
+  const { t } = useTranslation("common");
+
   return (
     <Section id="about" color="white">
       <div className="flex gap-6 flex-col lg:flex-row items-center justify-between">
@@ -17,35 +20,12 @@ export const About = () => {
           data-aos="fade-right"
           className="lg:w-[50%] w-full flex flex-col gap-12"
         >
-          <h2 className="text-5xl font-bold">🧑‍💻 My Career So Far</h2>
+          <h2 className="text-5xl font-bold">{t`about.title`}</h2>
           <p className="text-grey">
-            For two years, I worked as a freelance developer and collaborated
-            with several startups, including{" "}
-            <a
-              href="https://welcome.senzu.app/"
-              target="_blank"
-              rel="noreferrer"
-              className="font-bold"
-            >
-              Senzu
-            </a>
-            , where I worked for five months. Currently, I&apos;m working at
-            <a
-              href="https://www.miloguide.com"
-              target="_blank"
-              rel="noreferrer"
-              className="font-bold pl-1"
-            >
-              Miloguide
-            </a>
-            , a tourism company in Montréal, and I&apos;m excited to be part of
-            a dynamic and evolving team. If you&apos;re looking for a skilled
-            and creative web developer, please don&apos;t hesitate to contact
-            me. I&apos;m confident that I can help you achieve your goals and
-            bring your vision to life.
+            {t`about.description`}
             <br></br>
             <br></br>
-            Thanks for taking the time to read a little about me!
+            {t`about.thanks`}
           </p>
         </div>
 

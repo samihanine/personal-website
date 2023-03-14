@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import { Section } from "./Section";
 
 const QuoteSvg = ({ ...props }: { [key: string]: any }) => {
@@ -20,15 +21,15 @@ const QuoteSvg = ({ ...props }: { [key: string]: any }) => {
 };
 
 export const Quote = () => {
+  const { t } = useTranslation();
+
   return (
     <Section id="quote" color="white" className="gap-10">
       <QuoteSvg className="w-10 h-10 text-inherit" />
       <p data-aos="zoom-in" className="text-center text-2xl lg:text-3xl">
-        There are more possible games of chess than there are atoms in the
-        universe.
+        {t`quote.text-1`}
         <br></br>
-        It means that if you make a mistake, there’s a nearly infinite amount of
-        ways to fix it.
+        {t`quote.text-2`}
       </p>
       <p className="text-right font-bold text-xl">- Harold Finch</p>
     </Section>

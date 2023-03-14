@@ -1,10 +1,12 @@
 import { Section } from "./Section";
 import { projects, type Project } from "../data";
 import Image from "next/image";
-import { useState } from "react";
 import React from "react";
+import { LinkIcon } from "@/icon/LinkIcon";
+import { useTranslation } from "next-i18next";
 
 export const Projects = () => {
+  const { t } = useTranslation();
   // We will start by storing the index of the current image in the state.
   const [currentImage, setCurrentImage] = React.useState(0);
   const project: Project = projects[currentImage];
@@ -57,7 +59,7 @@ export const Projects = () => {
   return (
     <Section id="projects" color="black" className="py-[80px]">
       <h2 data-aos="fade-right" className="text-5xl font-bold mb-6 lg:mb-12">
-        💼 Some of my best work
+        {t`projects.title`}
       </h2>
       <div className="flex items-center justify-between gap-4 lg:gap-8 lg:flex-row flex-col-reverse">
         <a
@@ -103,22 +105,30 @@ export const Projects = () => {
             </h3>
           </div>
 
-          <p className="text-grey text relative z-[2] max-w-[400px] text-cente lg:text-end lg:mt-0">
-            {project.description}
-          </p>
+          <div className="flex flex-col relative z-[2] max-w-[400px] text-center lg:text-end lg:mt-0 gap-4">
+            <p className="text-grey">{t(project.description)}</p>
+            <a
+              href={project.link}
+              rel="noreferrer"
+              target="_blank"
+              className="font-bold flex self-center lg:self-end gap-2"
+            >
+              <LinkIcon className="h-6 w-6" /> <p>{t`projects.see`}</p>
+            </a>
+          </div>
 
           <div className="flex gap-8 mb-8 lg:mb-0 w-full lg:w-fit justify-between">
             <button
               onClick={previousImage}
               className="bg-primary text-secondary font-bold p-2 px-4"
             >
-              ← Previous
+              ← {t`projects.previous`}
             </button>
             <button
               onClick={nextImage}
               className="bg-primary text-secondary font-bold p-2 px-6"
             >
-              Next →
+              {t`projects.next`} →
             </button>
           </div>
         </div>

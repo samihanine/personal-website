@@ -1,12 +1,14 @@
 import { Section } from "./Section";
 import React from "react";
 import { InputText, InputSelect, InputArea, Button } from "../ui";
+import { useTranslation } from "next-i18next";
 
 export const Contact = () => {
   const [mail, setMail] = React.useState("");
   const [name, setName] = React.useState("");
   const [message, setMessage] = React.useState("");
   const [type, setType] = React.useState("job");
+  const { t } = useTranslation();
 
   const options = [
     {
@@ -27,7 +29,7 @@ export const Contact = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://submit-form.com/UbSTw7AA", {
+      await fetch("https://submit-form.com/UbSTw7AA", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -44,8 +46,10 @@ export const Contact = () => {
       setName("");
       setMessage("");
       setType("job");
+
+      alert(t`contact.success`);
     } catch (e) {
-      alert("There was an error! Try again later!");
+      alert(t`contact.error`);
     }
   };
   return (
@@ -54,13 +58,14 @@ export const Contact = () => {
         data-aos="fade-right"
         className="font-bold text-4xl lg:text-[55px] lg:leading-[68px]"
       >
-        Love to hear from you, <br></br>Get in touch 👋
+        {t`contact.title`} <br></br>
+        {t`contact.subtitle`}
       </h2>
 
       <form className="flex flex-col gap-4" onSubmit={submit}>
         <div className="flex gap-4 flex-col lg:flex-row">
           <InputText
-            label="Your name"
+            label={t`contact.name`}
             id="name"
             name="name"
             required
@@ -70,7 +75,7 @@ export const Contact = () => {
           <InputText
             required
             type="email"
-            label="Your email"
+            label={t`contact.email`}
             id="mail"
             name="mail"
             value={mail}
@@ -78,7 +83,7 @@ export const Contact = () => {
           />
         </div>
         <InputSelect
-          label="What are you interested"
+          label={t`contact.interest`}
           id="interest"
           options={options}
           name="interest"
@@ -86,7 +91,7 @@ export const Contact = () => {
           onChange={(e: any) => setType(e.target.value)}
         />
         <InputArea
-          label="Your message"
+          label={t`contact.message`}
           id="message"
           name="message"
           required
@@ -95,7 +100,11 @@ export const Contact = () => {
         />
 
         <div className="flex gap-4">
-          <Button label="Just send !" className="flex-1 mt-4" type="submit" />
+          <Button
+            label={t`contact.submit`}
+            className="flex-1 mt-4"
+            type="submit"
+          />
           <div className="flex-1"></div>
         </div>
       </form>
