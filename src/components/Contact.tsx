@@ -54,9 +54,12 @@ export const Contact = () => {
   };
   return (
     <Section color="white" className="gap-10">
-      <h2 data-aos="fade-right" className="font-bold text-2xl lg:text-5xl">
-        {t`contact.title`} <br></br>
-        {t`contact.subtitle`}
+      <h2
+        data-aos="fade-right"
+        className="font-bold text-2xl lg:text-5xl flex flex-col gap-2 lg:gap-5"
+      >
+        <span>{t`contact.title`}</span>
+        <span>{t`contact.subtitle`}</span>
       </h2>
 
       <form className="flex flex-col gap-4" onSubmit={submit}>

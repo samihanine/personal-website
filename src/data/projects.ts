@@ -41,7 +41,7 @@ export const projects: Project[] = [
   },
   {
     title: "Tutoriels",
-    description: "projects.tutoriels",
+    description: "projects.tutorials",
     image: tutoriel,
     date: "2021-03-01",
     link: "https://samihanine.github.io/tuto/",
